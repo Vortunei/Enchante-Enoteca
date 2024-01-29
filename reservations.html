@@ -68,6 +68,8 @@
             background-color: #45a049;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </head>
 <body>
 
@@ -96,35 +98,71 @@
         </tbody>
     </table>
 
-    <form action="#" method="post">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+    <form id="reservationForm" action="#" method="post" onsubmit="showConfirmation(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-      <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
 
-      <label for="date">Reservation Date:</label>
-      <input type="date" id="date" name="date" required>
+        <label for="date">Reservation Date:</label>
+        <input type="date" id="date" name="date" required>
 
-      <label for="time">Reservation Time:</label>
-      <input type="time" id="time" name="time" required>
+        <label for="time">Reservation Time:</label>
+        <input type="time" id="time" name="time" required>
 
-      <label for="partySize">Party Size:</label>
-      <select id="partySize" name="partySize" required>
-          <option value="1">1 person</option>
-          <option value="2">2 people</option>
-          <option value="3">3 people</option>
-          <option value="4">4 people</option>
-          <option value="5">5 people</option>
-          <option value="6">6 people</option>
-      </select>
+        <label for="partySize">Party Size:</label>
+        <select id="partySize" name="partySize" required>
+            <option value="1">1 person</option>
+            <option value="2">2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+            <option value="5">5 people</option>
+            <option value="6">6 people</option>
+        </select>
 
-      <button type="submit">Submit Reservation</button>
+        <!-- Modify the button to call the celebrate function on click -->
+        <button type="button" onclick="celebrate()">Submit Reservation</button>
     </form>
 </div>
+
+<script>
+    // Initialize the jsConfetti object
+    const jsConfetti = new JSConfetti();
+
+    function showConfirmation(event) {
+        // Prevent the form from actually submitting
+        event.preventDefault();
+
+        // Get form inputs
+        var name = document.getElementById('name').value;
+        var date = document.getElementById('date').value;
+        var time = document.getElementById('time').value;
+        var partySize = document.getElementById('partySize').value;
+
+        // Create confirmation message
+        var confirmationMessage = 'Your reservation for ' + partySize + ' person(s) on ' + date + ' at ' + time + ' has been confirmed. We look forward to seeing you!';
+
+        // Display confirmation message in a pop-up
+        alert(confirmationMessage);
+    }
+
+    // Celebrate function with confetti animation
+    function celebrate() {
+        // Use js-confetti to add confetti animation
+        jsConfetti.addConfetti({
+            emojis: ['🎉', '🎊'],
+            emojiSize: 25,
+            confettiNumber: 100,
+        });
+
+        // Call your existing showConfirmation function
+        showConfirmation(new Event('submit'));
+    }
+</script>
 
 </body>
 </html>
