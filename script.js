@@ -2,6 +2,7 @@
 console.log("Massandje, Emma, and Gabriel");
 */
 
+// Makes audio player
 var audio = document.getElementById("myAudio");
 
 
@@ -23,6 +24,7 @@ function setVolume(volume) {
 
 const button = document.querySelector("#button");
 const canvas = document.querySelector("#canvas");
+//end audio player
 
 button.addEventListener("click", () => {
   

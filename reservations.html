@@ -17,7 +17,7 @@
             width: 50%;
             margin: auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: #F7E7CE;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 50px;
@@ -57,7 +57,7 @@
 
         button {
             background-color: #4caf50;
-            color: #fff;
+            color: #4F7942;;
             padding: 10px 15px;
             border: none;
             border-radius: 4px;
@@ -124,42 +124,37 @@
             <option value="6">6 people</option>
         </select>
 
-        <!-- Modify the button to call the celebrate function on click -->
         <button type="button" onclick="celebrate()">Submit Reservation</button>
     </form>
 </div>
 
 <script>
-    // Initialize the jsConfetti object
+
     const jsConfetti = new JSConfetti();
 
     function showConfirmation(event) {
-        // Prevent the form from actually submitting
+
         event.preventDefault();
 
-        // Get form inputs
         var name = document.getElementById('name').value;
         var date = document.getElementById('date').value;
         var time = document.getElementById('time').value;
         var partySize = document.getElementById('partySize').value;
 
-        // Create confirmation message
         var confirmationMessage = 'Your reservation for ' + partySize + ' person(s) on ' + date + ' at ' + time + ' has been confirmed. We look forward to seeing you!';
 
-        // Display confirmation message in a pop-up
         alert(confirmationMessage);
     }
 
-    // Celebrate function with confetti animation
+    //confetti animation
     function celebrate() {
-        // Use js-confetti to add confetti animation
+        //js-confetti to add confetti animation
         jsConfetti.addConfetti({
             emojis: ['🎉', '🎊'],
             emojiSize: 25,
             confettiNumber: 100,
         });
 
-        // Call your existing showConfirmation function
         showConfirmation(new Event('submit'));
     }
 </script>

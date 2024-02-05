@@ -103,3 +103,24 @@ body {
           width: 100%;
       }
   }
+  
+  header {
+      background-color: #4F7942;
+      padding: 20px;
+      transition: background-color 0.5s ease; /* background color transition*/
+  }
+  
+  header:hover {
+      background-color: #638a54; /* background color chane with hover */
+  }
+  
+  footer {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      transition: background-color 0.5s ease; /* Smooth transition for background color */
+  }
+  
+  footer:hover {
+      background-color: #d9d9d9; /* Change background color on hover */
+  }
