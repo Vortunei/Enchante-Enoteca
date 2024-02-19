@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Locations</title>
+    <style>
+        body {
+            font-family: Jazz LET, fantasy;
+            font-size: 16px;
+            color: #00000;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4F7942;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .photo-album {
+            text-align: center;
+            padding: 20px;
+            background-color: #F7E7CE;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .photo {
+            flex: 0 0 calc(33.33% - 20px);
+            max-width: calc(33.33% - 20px);
+        }
+
+        .photo img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Join us at any of our 3 locations!</h1>
+    </header>
+
+    <section class="photo-album">
+        <h2>Our Locations</h2>
+        <div class="photo-grid">
+            <div class="photo">
+                <img src="photos/getaroom.jpg" alt="Bellevue">
+              <h1>Bellevue</h1>
+            </div>
+            <div class="photo">
+                <img src="photos/tablesday.jpg" alt="Redmond">
+               <h1>Redmond</h1>
+            </div>
+            <div class="photo">
+                <img src="photos/tableswindows.jpg" alt="Kirkland">
+               <h1>Kirkland</h1>
+            </div>
+            <!-- Add more photos as needed -->
+        </div>
+    </section>
+
+    <!-- You can add more content or sections here -->
+
+</body>
+</html>
