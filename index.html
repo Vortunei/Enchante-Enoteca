@@ -61,11 +61,86 @@
     <canvas id="confetti"></canvas>
     <link rel="stylesheet" href="style.css">
 
+    
+   
+
 
    
 
 
 
 
-</body>
-</html>
+  <html>
+  <head>
+      <title>Countdown Timer</title>
+      <style>
+          .clock {
+              background-color: white;
+              width: 400px;
+              text-align: center;
+              color: white;
+              font-size: 1em;
+          }
+          .clock>span {
+              padding: 10px;
+              border-radius: 10px;
+              background-color: #4F7942;
+          }
+          .clock>span>span {
+              padding: 5px;
+              border-radius: 10px;
+              background-color: #F7E7CE;
+          }
+          input {
+              padding: 15px;
+              margin: 20px;
+              font-size: 1.5em;
+          }
+      </style>
+  </head>
+  <body>
+      <div>
+          <div class="clock">
+              <span><span class="days">0</span> Days</span>
+              <span><span class="hours">0</span> Hours</span>
+              <span><span class="minutes">0</span> Minutes</span>
+              <span><span class="seconds">0</span> Seconds</span>
+          </div>
+      </div>
+
+      <script>
+         
+          var endDate = new Date('2024-03-18');
+
+          
+          function countdown() {
+              var now = new Date(); 
+              var difference = endDate.getTime() - now.getTime(); 
+
+             
+              if (difference > 0) {
+                  var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                 
+                  document.querySelector('.days').textContent = days;
+                  document.querySelector('.hours').textContent = hours;
+                  document.querySelector('.minutes').textContent = minutes;
+                  document.querySelector('.seconds').textContent = seconds;
+
+                
+                  setTimeout(countdown, 1000);
+              } else {
+                 
+                  document.querySelector('.clock').innerHTML = '<span>Countdown expired!</span>';
+              }
+          }
+
+          
+          countdown();
+
+      </script>
+  </body>
+  </html>

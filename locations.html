@@ -19,7 +19,7 @@
         }
 
         header h1 {
-            margin: 0;
+            margin: 0 auto;
         }
 
         .photo-album {
@@ -46,6 +46,23 @@
             width: 100%;
             height: auto;
         }
+
+      /* tablet */
+      @media (max-width: 768px) {
+          .photo {
+              flex: 0 0 calc(50% - 20px);
+              max-width: calc(50% - 20px);
+          }
+      }
+
+      /* mobile */
+      @media (max-width: 480px) {
+          .photo {
+              flex: 0 0 calc(100% - 20px);
+              max-width: calc(100% - 20px);
+          }
+      }
+      
     </style>
 </head>
 <body>
@@ -71,7 +88,7 @@
             <!-- Add more photos as needed -->
         </div>
     </section>
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
     <!-- You can add more content or sections here -->
 
