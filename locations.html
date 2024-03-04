@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,8 +39,8 @@
         }
 
         .photo {
-            flex: 0 0 calc(33.33% - 20px);
-            max-width: calc(33.33% - 20px);
+            flex: 0 0 100%;
+            max-width: 100%;
         }
 
         .photo img {
@@ -47,22 +48,22 @@
             height: auto;
         }
 
-      /* tablet */
-      @media (max-width: 768px) {
-          .photo {
-              flex: 0 0 calc(50% - 20px);
-              max-width: calc(50% - 20px);
-          }
-      }
+        /* Tablet */
+        @media (max-width: 768px) {
+            .photo {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
 
-      /* mobile */
-      @media (max-width: 480px) {
-          .photo {
-              flex: 0 0 calc(100% - 20px);
-              max-width: calc(100% - 20px);
-          }
-      }
-      
+        /* Mobile */
+        @media (max-width: 480px) {
+            .photo {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
