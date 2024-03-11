@@ -1,146 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="style.css">
-   <script src="https://www.youtube.com/watch?v=xO2y82caN4U&list=RDxO2y82caN4U&start_radio=1/iframe_api"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
-  
-    <header>
-        <h1>Enchanté Enoteca</h1>
-        <nav>
-            <a href="reservations.html">Reservations</a>
-            <a href="menu.html">Menu</a>
-            <a href="locations.html">Locations</a>
-            <a href="aboutUs.html">About Us</a>
-        </nav>
-    </header>
 
-    <section id="content">
-        <h2>Welcome to Enchanté Enoteca</h2>
-        <p>In the heart of the city, "Enchanté Enoteca" brewed romance. Isabella, the enchanting owner, orchestrated a dance of flavors. Fairy lights twinkled as lovers shared drinks and whispers, making each bite a sweet note in their love story</p>
-        <div class="grid">
-            <a href="list.html">
-                <img src="photos/peopletable.jpg">
-                <figcaption>Enjoy our beautiful patio seating.</figcaption>
-            </a>
-            <a href="list.html">
-                <img src="photos/drinks.jpg">
-                <figcaption>Try our specialty cocktails!</figcaption>
-            </a>
-            <a href="list.html">
-                <img src="photos/table.jpg">
-                <figcaption>Private booths available at request.</figcaption>
-            </a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Enchanté Enoteca</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="reservations.html">Reservations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="menu.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="locations.html">Locations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutUs.html">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="content">
+    <h2>Welcome to Enchanté Enoteca</h2>
+    <p>In the heart of the city, "Enchanté Enoteca" brewed romance. Isabella, the enchanting owner, orchestrated a dance
+      of flavors. Fairy lights twinkled as lovers shared drinks and whispers, making each bite a sweet note in their
+      love story</p>
+    <div class="grid">
+      <a href="list.html">
+        <img src="photos/peopletable.jpg">
+        <figcaption>Enjoy our beautiful patio seating.</figcaption>
+      </a>
+      <a href="list.html">
+        <img src="photos/drinks.jpg">
+        <figcaption>Try our specialty cocktails!</figcaption>
+      </a>
+      <a href="list.html">
+        <img src="photos/table.jpg">
+        <figcaption>Private booths available at request.</figcaption>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Our Website. All rights reserved.</p>
+  </footer>
+
+   <script src="script.js"></script>
+
+  </body>
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Music</title>
+    </head>
+    <body>
+      <audio id="myAudio" controls>
+        <source src="music/La Casa De Papel - Bella Ciao [Lyrics] (Money Heist).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+
+      <script src="script.js"></script>
+
+      <canvas id="confetti"></canvas>
+      <link rel="stylesheet" href="style.css">
+
+    <html>
+    <head>
+        <title>Countdown Timer</title>
+        <style>
+            .clock {
+                background-color: white;
+                width: 400px;
+                text-align: center;
+                color: white;
+                font-size: 1em;
+            }
+            .clock>span {
+                padding: 10px;
+                border-radius: 10px;
+                background-color: #4F7942;
+            }
+            .clock>span>span {
+                padding: 5px;
+                border-radius: 10px;
+                background-color: #F7E7CE;
+            }
+            input {
+                padding: 15px;
+                margin: 20px;
+                font-size: 1.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="clock">
+                <span><span class="days">0</span> Days</span>
+                <span><span class="hours">0</span> Hours</span>
+                <span><span class="minutes">0</span> 
+                  Minutes</span>
+                <span><span class="seconds">0</span>        
+                  Seconds</span>
+            </div>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2024 Our Website. All rights reserved.</p>
-    </footer>
+        <script>
+
+            var endDate = new Date('2024-03-18');
+
+
+            function countdown() {
+                var now = new Date(); 
+                var difference = endDate.getTime() - now.getTime(); 
+
+  <!-- Bootstrap JS (jQuery, Popper.js) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <script src="script.js"></script>
-  
+
 </body>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music</title>
-  </head>
-  <body>
-    <audio id="myAudio" controls>
-      <source src="music/La Casa De Papel - Bella Ciao [Lyrics] (Money Heist).mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-
-    <script src="script.js"></script>
-    
-    <canvas id="confetti"></canvas>
-    <link rel="stylesheet" href="style.css">
-
-    
-   
-
-
-   
-
-
-
-
-  <html>
-  <head>
-      <title>Countdown Timer</title>
-      <style>
-          .clock {
-              background-color: white;
-              width: 400px;
-              text-align: center;
-              color: white;
-              font-size: 1em;
-          }
-          .clock>span {
-              padding: 10px;
-              border-radius: 10px;
-              background-color: #4F7942;
-          }
-          .clock>span>span {
-              padding: 5px;
-              border-radius: 10px;
-              background-color: #F7E7CE;
-          }
-          input {
-              padding: 15px;
-              margin: 20px;
-              font-size: 1.5em;
-          }
-      </style>
-  </head>
-  <body>
-      <div>
-          <div class="clock">
-              <span><span class="days">0</span> Days</span>
-              <span><span class="hours">0</span> Hours</span>
-              <span><span class="minutes">0</span> Minutes</span>
-              <span><span class="seconds">0</span> Seconds</span>
-          </div>
-      </div>
-
-      <script>
-         
-          var endDate = new Date('2024-03-18');
-
-          
-          function countdown() {
-              var now = new Date(); 
-              var difference = endDate.getTime() - now.getTime(); 
-
-             
-              if (difference > 0) {
-                  var days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                  var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                  var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                  var seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                 
-                  document.querySelector('.days').textContent = days;
-                  document.querySelector('.hours').textContent = hours;
-                  document.querySelector('.minutes').textContent = minutes;
-                  document.querySelector('.seconds').textContent = seconds;
-
-                
-                  setTimeout(countdown, 1000);
-              } else {
-                 
-                  document.querySelector('.clock').innerHTML = '<span>Countdown expired!</span>';
-              }
-          }
-
-          
-          countdown();
-
-      </script>
-  </body>
+</html>
   </html>
