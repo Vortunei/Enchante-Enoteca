@@ -1,15 +1,17 @@
 /* Bootstrap*/
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap')
 .navbar {
     background-color: #4F7942; 
     padding: 20px; 
 }
 
 .navbar-brand {
-    font-family: Jazz LET, fantasy; 
+    font-family: "Sacramento", cursive;
     color: #4F7942; 
 }
 
 .navbar-nav .nav-link {
+  font-family: "Sacramento", cursive;
     margin-right: 10px; 
     text-decoration: none; 
     color: #4F7942; 
@@ -20,10 +22,69 @@
 }
 
 /*EXISTING STYLES*/
+ #cover-image {
+     opacity: 0;  
+     transition: opacity 0.5s ease;  
+ }
+
+ #cover-image {
+   animation: fadeInOut 4s infinite;
+   -webkit-animation: fadeInOut 4s infinite;
+   -moz-animation: fadeInOut 4s infinite;
+   -o-animation: fadeInOut 4s infinite;
+   -ms-animation: fadeInOut 4s infinite;
+ }
+
+ @keyframes fadeInOut {
+   0%, 100% {
+     opacity: 0;
+   }
+   50% {
+     opacity: 1;
+   }
+ }
+
+ @-moz-keyframes fadeInOut {
+   0%, 100% {
+     opacity: 0;
+   }
+   50% {
+     opacity: 1;
+   }
+ }
+
+ @-webkit-keyframes fadeInOut {
+   0%, 100% {
+     opacity: 0;
+   }
+   50% {
+     opacity: 1;
+   }
+ }
+
+ @-o-keyframes fadeInOut {
+   0%, 100% {
+     opacity: 0;
+   }
+   50% {
+     opacity: 1;
+   }
+ }
+
+ @-ms-keyframes fadeInOut {
+   0%, 100% {
+     opacity: 0;
+   }
+   50% {
+     opacity: 1;
+   }
+ }
 body {
-    font-family: Jazz LET, fantasy;
+   font-family: "Sacramento", cursive;
     font-size: 16px;
-    color: #00000;
+    color: #000000;
+    background-color: #4F7942 !important;
+    width: 100%;
 }
 
 header {
@@ -41,7 +102,7 @@ nav a {
 }
 
 #content {
-    font-family: Snell Roundhand, cursive;
+    font-family: "Sacramento", cursive;
     text-align: center;
     padding: 20px;
     margin: 0 auto;
@@ -49,7 +110,7 @@ nav a {
     background-color: #F7E7CE;
 }
 
-.grid {}
+
 
 .grid a {
     display: block;
@@ -62,9 +123,14 @@ nav a {
 }
 
 footer {
+  font-family: "Sacramento", cursive;
     background-color: #f0f0f0;
     padding: 20px;
     text-align: center;
+}
+
+.clock{
+  margin: 0 auto;
 }
 
 /* DESKTOP */

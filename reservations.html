@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation Form</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Sacramento", cursive;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -55,9 +60,20 @@
             color: white;
         }
 
+        /* Custom CSS for the dropdown button */
+        .dropdown-button {
+            background-color: #4caf50; /* Set background color to green */
+            color: #fff; /* Set text color to white */
+            border: none; /* Remove border */
+        }
+
+        .dropdown-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
         button {
             background-color: #4caf50;
-            color: #4F7942;;
+            color: #4F7942;
             padding: 10px 15px;
             border: none;
             border-radius: 4px;
@@ -68,35 +84,64 @@
             background-color: #45a049;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </head>
 <body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Enchanté Enoteca</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="locations.html">Locations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reservations.html">Reservations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="aboutUs.html">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contactus.html">Contact us</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 <div class="container">
     <h2>Reservation Form</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Day</th>
-                <th>Open</th>
-                <th>Close</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>M-S</td>
-                <td>11 AM</td>
-                <td>11 PM</td>
-            </tr>
-            <tr>
-                <td>Sunday</td>
-                <td>11 AM</td>
-                <td>8 PM</td>
-            </tr>
-        </tbody>
-    </table>
+    <button type="button" class="btn btn-success dropdown-button" data-toggle="collapse" data-target="#hoursCollapse">Hours</button>
+    <div id="hoursCollapse" class="collapse">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Open</th>
+                    <th>Close</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>M-S</td>
+                    <td>11 AM</td>
+                    <td>11 PM</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>11 AM</td>
+                    <td>8 PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <form id="reservationForm" action="#" method="post" onsubmit="showConfirmation(event)">
         <label for="name">Name:</label>
@@ -124,16 +169,20 @@
             <option value="6">6 people</option>
         </select>
 
-        <button type="button" onclick="celebrate()">Submit Reservation</button>
+        <button type="submit" class="btn btn-success">Submit Reservation</button>
     </form>
 </div>
 
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- JSConfetti Library -->
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
 <script>
-
-    const jsConfetti = new JSConfetti();
-
     function showConfirmation(event) {
-
         event.preventDefault();
 
         var name = document.getElementById('name').value;
@@ -142,23 +191,23 @@
         var partySize = document.getElementById('partySize').value;
 
         var confirmationMessage = 'Your reservation for ' + partySize + ' person(s) on ' + date + ' at ' + time + ' has been confirmed. We look forward to seeing you!';
-
         alert(confirmationMessage);
+
+        // Call the celebrate function to trigger the confetti animation
+        celebrate();
     }
 
-    //confetti animation
     function celebrate() {
-        //js-confetti to add confetti animation
+        // Instantiate the JSConfetti object
+        const jsConfetti = new JSConfetti();
+
+        // Add confetti animation
         jsConfetti.addConfetti({
             emojis: ['🎉', '🎊'],
             emojiSize: 25,
             confettiNumber: 100,
         });
-
-        showConfirmation(new Event('submit'));
     }
 </script>
-<link rel="stylesheet" href="style.css">
-
 </body>
 </html>

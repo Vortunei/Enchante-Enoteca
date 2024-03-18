@@ -1,45 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive Google Map with jQuery</title>
-<!-- Include jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<style>
-    /* Set the map container size */
-    #map {
-        height: 400px;
-        width: 100%;
-    }
-  body {
-      font-family: URW Chancery L, cursive;
-      font-size: 16px;
-      background-color: #4F7942;
-      margin: 0;
-      padding: 0;
+/*
+console.log("Massandje,Emma and Gabriel");
+*/
+
+var audio = document.getElementById("myAudio");
+
+
+function playAudio() {
+  audio.play();
+}
+
+
+function pauseAudio() {
+  audio.pause();
+}
+
+
+function setVolume(volume) {
+  audio.volume = volume;
+}
+
+const button = document.querySelector("#button");
+const canvas = document.querySelector("#canvas");
+
+button.addEventListener("click", () => {
+
+
+  if (typeof JSConfetti !== "undefined") {
+    const JsConfetti = new JSConfetti.default();
+    jsConfetti.addConfetti({
+      emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+    }).then(() => console.log('Confetti animation completed!'));
+  } else {
+    console.error('JSConfetti is not defined. Make sure the library is properly loaded.');
   }
-</style>
-</head>
-  <h1>About Us</h1>
-  <p>Welcome to Enchanté Enoteca, where the flavors of Sicily come to life in every dish, and the spirit of tradition is as rich as the soil that nurtured it.
+});
 
-  At Enchanté Enoteca, our story is one of love, passed down through generations. Inspired by the culinary legacy of our high school sweetheart beginnings, we bring you a dining experience infused with the warmth and authenticity of our Sicilian heritage.
+var startDate = new Date('2024-02-28');
+var endDate = new Date('2024-03-18');
 
-  Our journey began in the kitchens of our mothers, where their passion for cooking ignited a flame within us. From them, we learned the art of transforming simple ingredients into exquisite dishes, each one a testament to the love and dedication poured into it.
 
-  Drawing from our Sicilian roots, our menu is a celebration of traditional recipes handed down from our mothers' kitchens in the sun-drenched hills of Italy. From hearty pastas to succulent seafood, each dish is crafted with care, using only the freshest ingredients and time-honored techniques.
+var difference = endDate.getTime() - startDate.getTime();
 
-  As you step into Enchanté Enoteca, you're not just dining at a restaurant; you're joining our family. Here, every meal is an invitation to share in our heritage, to savor the flavors of Sicily, and to create new memories that will last a lifetime.
 
-  So come, let us enchant your senses and transport you to the heart of Italy. Benvenuti alla nostra tavola. Welcome to Enchanté Enoteca.</p>
+var daysDifference = Math.ceil(difference / (1000 * 60 * 60 * 24));
 
-<body>
-<h1>Sicily, Italy </h1>
-<div id="map"></div>
-<!-- Load Google Maps API asynchronously -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7W7N9fgT_85f_OEW4mWJtSwfu151cOgc&callback=initMap"></script>
-<script>
+
+console.log("Countdown from February 28, 2024, to March 18, 2024:");
+for (var i = daysDifference; i >= 0; i--) {
+  console.log("Days remaining: " + i);
+}
+
+const express = require('express');
+const fetch = require('node-fetch');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
 // Function to initialize the map
 function initMap() {
     // Coordinates for Sicily, Italy
@@ -55,11 +71,22 @@ function initMap() {
         map: map,
         title: 'Sicily, Italy'
     });
+  marker.setLabel('Sicily Marker');
 }
-</script>
-</body>
-</html>
+initMap();
 
-
+// Load Google Maps API through the proxy server using jQuery AJAX
+$.ajax({
+  url: '/maps/api/js?key=AIzaSyB7W7N9fgT_85f_OEW4mWJtSwfu151cOgc&callback=initMap',
+  dataType: 'script',
+  success: function() {
+    // Google Maps API loaded successfully
+    console.log('Google Maps API loaded successfully');
+  },
+  error: function() {
+    // Error loading Google Maps API
+    console.error('Error loading Google Maps API');
+  }
+});
 
 
